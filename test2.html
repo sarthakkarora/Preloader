@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Preloader</title>
+    <style>
+        /* Styles for the preloader */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(3, 3, 3, 0.9); /* Dark background with some transparency */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        /* Styles for the preloader content */
+        .preloader-content {
+            text-align: center;
+        }
+
+        .preloader-content img {
+            width: 500px; /* Adjust size as needed */
+            height: auto; /* Maintain aspect ratio */
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-content">
+            <img src="preload.gif" alt="">
+            <p></p>
+        </div>
+    </div>
+
+    <!-- JavaScript to hide preloader after a delay -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            setTimeout(function () {
+                document.getElementById('preloader').classList.add('hidden');
+            }, 2500); // Adjust delay as needed
+        });
+    </script>
+</body>
+</html>
